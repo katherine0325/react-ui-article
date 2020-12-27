@@ -15,7 +15,7 @@ class Default extends Component {
                 <div className="main">
                   {this.props.children}
                 </div>
-                {/* <p className="github-site">本项目为React前端项目，代码地址：<a href="https://github.com/katherine0325/react-tec-blog" target="_blank">https://github.com/katherine0325/tec-blog</a></p> */}
+                {/* <p className="github-site">本项目为React前端项目，代码地址：<a href="https://github.com/katherine0325/react-ui-article" target="_blank">https://github.com/katherine0325/react-ui-article</a></p> */}
               </div>
             </div>
         )
