@@ -3,10 +3,10 @@ import './index.css';
 
 export default function ArticleLine({number, title, date}) {
   return (
-    <div class="article-line">
-      <div class="number">{number}</div>
-      <div class="title">{title}</div>
-      <div class="date">{date}</div>
+    <div className="article-line">
+      <div className="number">{number}</div>
+      <div className="title">{title}</div>
+      <div className="date">{date}</div>
     </div>
   )
 }
