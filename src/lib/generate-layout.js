@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
-export default Layout => {
+const generateLayout = Layout => {
     return ({component: Component, ...rest}) => {
         return (
             <Route {...rest} render={matchProps => (
@@ -10,3 +10,5 @@ export default Layout => {
         )
     };
 }
+
+export default generateLayout;
