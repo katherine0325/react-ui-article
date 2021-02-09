@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import marked from 'marked';
-import { getArticle } from './service';
+import { getArticle } from '../../api/article';
 import { convertParams } from '../../lib';
 import { message } from 'antd';
 import './index.css';
@@ -12,7 +12,7 @@ export default function Article(props) {
     useEffect(() => {
         const params = convertParams(props.history.location.search);
         init(params.article_number);
-    }, []);
+    }, [props.history.location.search]);
 
     async function init(article_number) {
         const loading = message.loading('加载中...');
