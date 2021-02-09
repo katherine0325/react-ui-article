@@ -1,25 +1,16 @@
-import React, { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { Suspense } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import 'antd/dist/antd.css';
-
-import DefaultLayout from './layout/default';
-
-import globalData from './global';
-
-const Home = lazy(() => import('./pages/home'));
-const Article = lazy(() => import('./pages/article'));
-const Pagea = lazy(() => import('./pages/pagea'));
-const Pageb = lazy(() => import('./pages/pageb'));
-const Test = lazy(() => import('./pages/test'));
+import routes from './routes';
 
 const AppRouter = () => (
   <Router>
     <Suspense fallback={<div>加载中...</div>}>
-      <DefaultLayout path="/" exact component={Home} title={globalData.title} />
-      <DefaultLayout path="/article" component={Article} />
-      <Route path="/a" component={Pagea} />
-      <Route path="/b" component={Pageb} />
-      <Route path="/test" component={Test} />
+      <Switch>
+        {routes.map(route => route.layout ? 
+          <route.layout key={route.path} {...route} /> :
+          <Route key={route.path} {...route} />)}
+      </Switch>
     </Suspense>
   </Router>
 );

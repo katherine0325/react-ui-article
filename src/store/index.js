@@ -1,10 +1,10 @@
 import { createStore, combineReducers } from 'redux';
-import pagea from './pagea/reducer';
-import pageb from './pageb/reducer';
+import home from './home/reducer';
+import article from './article/reducer';
 
 export default createStore(
   combineReducers({
-    pagea,
-    pageb,
+    home,
+    article,
   })
 );
